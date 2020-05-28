@@ -16,3 +16,4 @@ Images from [Pixabay](pixabay.com), albums images - from JSON.
 ## Other info
 
 As additional information, I display the price of the album via tooltip.
+Also, clicking on the avatar of the album will open a new tab with this album on Apple Music.
