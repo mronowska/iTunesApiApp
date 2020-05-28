@@ -25,13 +25,13 @@ function getData() {
         .then(json => {
     
             let transformHtml = ``
-
-            for (let i = 0; i <= numberOfAlbums; i++) {
+    
+            for (let i = 0; i < numberOfAlbums; i++) {
                 transformHtml +=
                     ` 
                     <ul class="collection">
-                        <li class="collection-item avatar">
-                            <img class="circle" src=${json.feed.entry[i]["im:image"][2].label}>
+                        <li class="collection-item avatar"><a href="${json.feed.entry[i].link.attributes.href}" target="_blank">
+                            <img class="circle" src=${json.feed.entry[i]["im:image"][2].label}></a>
                             <span class="title">${json.feed.entry[i]["im:name"].label}</span>
                             <p>${json.feed.entry[i]["im:artist"].label}</p>
                             <a href="#!" class="tooltipped secondary-content" data-position="top" data-tooltip="${json.feed.entry[i]["im:price"].label}"><i class="material-icons info">info</i></a>
