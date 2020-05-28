@@ -1,0 +1,250 @@
+* {
+    margin: 0;
+    padding: 0;
+}
+
+body {
+    font-family: 'Encode Sans Expanded', sans-serif;
+}
+
+.parallax {
+    position: relative;
+    text-align: center;
+
+    &-container {
+        margin-bottom: 40px;
+    }
+}
+
+header {
+    z-index: 1;
+
+    h1 {
+        font-size: 72px;
+        font-weight: 700;
+        color: #FFF;
+        width: 70%;
+        position: absolute;
+        text-align: center;
+        top: 50%;
+        left: 50%;
+        transform: translate(-50%, -50%);
+        margin: 0;
+    }
+}
+
+.nav {
+    &-wrapper {
+        background-color: #efa8aa;
+    }
+}
+
+.searchLabel {
+    font-size: 32px;
+    color: #cbe6e9;
+    margin-bottom: 20px;
+
+    &-content {
+        font-size: 15px;
+        color: black;
+        text-align: justify;
+        margin-bottom: 30px;
+    }
+}
+
+.pulse {
+    animation-name: pulse;
+    -webkit-animation-name: pulse;
+    animation-duration: 1.5s;
+    -webkit-animation-duration: 1.5s;
+    animation-iteration-count: infinite;
+    -webkit-animation-iteration-count: infinite;
+}
+
+#searchResults {
+    margin-top: 20px;
+}
+
+.card {
+    padding: 3px;
+    text-align: center;
+
+    &-content {
+        display: inline-block !important;
+        width: 100%;
+        white-space: nowrap;
+        overflow: hidden !important;
+        text-overflow: ellipsis;
+    }
+}
+
+.slideRight {
+    animation-name: slideRight;
+    -webkit-animation-name: slideRight;
+    animation-duration: 1s;
+    -webkit-animation-duration: 1s;
+    animation-timing-function: ease-in-out;
+    -webkit-animation-timing-function: ease-in-out;
+    visibility: visible !important;
+}
+
+.tossing {
+    animation-name: tossing;
+    -webkit-animation-name: tossing;
+    animation-duration: 5s;
+    -webkit-animation-duration: 5s;
+    animation-iteration-count: infinite;
+    -webkit-animation-iteration-count: infinite;
+
+    &:hover {
+        animation-iteration-count: 0;
+        -webkit-animation-iteration-count: 0;
+        opacity: 0.7;
+    }
+}
+
+/*
+img.circle { 
+    &:before {
+        content: ' '; 
+        background-image: url("https://cdn.pixabay.com/photo/2018/05/28/12/10/headphones-3435888_1280.jpg");
+}}*/
+
+.info {
+    color: #efa8aa;
+
+    &:hover {
+        opacity: 0.6;
+    }
+}
+
+footer {
+    text-align: right;
+    font-size: 16px;
+    font-weight: 400;
+    color: #fff;
+    padding: 4px 20px 12px 0;
+    background-image: url("https://cdn.pixabay.com/photo/2018/05/28/12/10/headphones-3435888_1280.jpg");
+    background-color: #cbe6e9; 
+    height: 40px;
+    background-position: top; 
+    background-repeat: no-repeat;
+    background-size: cover; 
+}
+
+@keyframes pulse {
+    0% {
+        transform: scale(0.9);
+        opacity: 0.7;
+    }
+
+    50% {
+        transform: scale(1);
+        opacity: 1;
+    }
+
+    100% {
+        transform: scale(0.9);
+        opacity: 0.7;
+    }
+}
+
+@-webkit-keyframes pulse {
+    0% {
+        -webkit-transform: scale(0.95);
+        opacity: 0.7;
+    }
+
+    50% {
+        -webkit-transform: scale(1);
+        opacity: 1;
+    }
+
+    100% {
+        -webkit-transform: scale(0.95);
+        opacity: 0.7;
+    }
+}
+   
+
+    @keyframes slideRight {
+        0% {
+            transform: translateX(-150%);
+        }
+
+        50% {
+            transform: translateX(8%);
+        }
+
+        65% {
+            transform: translateX(-4%);
+        }
+
+        80% {
+            transform: translateX(4%);
+        }
+
+        95% {
+            transform: translateX(-2%);
+        }
+
+        100% {
+            transform: translateX(0%);
+        }
+    }
+
+    @-webkit-keyframes slideRight {
+        0% {
+            -webkit-transform: translateX(-150%);
+        }
+
+        50% {
+            -webkit-transform: translateX(8%);
+        }
+
+        65% {
+            -webkit-transform: translateX(-4%);
+        }
+
+        80% {
+            -webkit-transform: translateX(4%);
+        }
+
+        95% {
+            -webkit-transform: translateX(-2%);
+        }
+
+        100% {
+            -webkit-transform: translateX(0%);
+        }
+    }
+
+
+@keyframes tossing {
+    0% {
+        transform: rotate(-4deg);
+    }
+
+    50% {
+        transform: rotate(4deg);
+    }
+
+    100% {
+        transform: rotate(-4deg);
+    }
+}
+
+@-webkit-keyframes tossing {
+    0% {
+        -webkit-transform: rotate(-4deg);
+    }
+
+    50% {
+        -webkit-transform: rotate(4deg);
+    }
+
+    100% {
+        -webkit-transform: rotate(-4deg);
+    }
+}
+

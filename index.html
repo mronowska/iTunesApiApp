@@ -1,35 +1,81 @@
-<!doctype html>
+﻿<!doctype html>
 
 <html lang="en">
-<head>
-    <meta charset="utf-8">
+    <head>
+        <meta charset="utf-8">
 
-    <title>100 Top albums on iTunes</title>
-    <meta name="description" content="100 Top albums on iTunes">
+        <title>100 Top albums on iTunes</title>
+        <meta name="description" content="100 Top albums on iTunes">
 
-    <link rel="stylesheet" href="main.css">
+        <!--Custom styles-->
+        <link rel="stylesheet" href="css/main.css">
 
-    <!-- materializecss -->
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/css/materialize.min.css">
-    <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+        <!--Import Google Icon Font-->
+        <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
 
-    <!--bootstrap-->
-    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/css/bootstrap.min.css" integrity="sha384-9aIt2nRpC12Uk9gS9baDl411NQApFmC26EwAOH8WgZl5MYYxFfc+NcPb1dKGj7Sk" crossorigin="anonymous">
-</head>
+        <!--Google fonts-->
+        <link href="https://fonts.googleapis.com/css2?family=Encode+Sans+Expanded:wght@400;700&display=swap" rel="stylesheet">
 
-<body>
-    <div>
-        <h1>100 Top albums on iTunes</h1>
-        <button id="btnSearch">SEARCH</button>
+        <!--Compiled and minified CSS-->
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/css/materialize.min.css">
 
-        <div class="container">
-            <div class="row" id="albums"></div>
+    </head>
+
+    <body>
+
+        <div class="parallax-container">
+            <div class="parallax">
+                <img src="https://cdn.pixabay.com/photo/2018/05/28/12/10/headphones-3435888_1280.jpg">
+                <header>
+                    <h1>100 Top albums on iTunes</h1>
+                </header>
+            </div>
         </div>
 
-    </div>
 
-    <!-- Compiled and minified JavaScript -->
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/js/materialize.min.js"></script>
-    <script src="script.js"></script>
-</body>
+        <div class="section white">
+            <div class="row container">
+                <div class="col s3">
+                    <p class="searchLabel">Search here</p>             
+                    <p class="searchLabel-content">Here you can find your <b class="pulse">&hearts;</b> music! Simply enter the name of your favorite artist or the album you love and see if it belongs to the <b>100 most popular albums on iTunes!</b></p>
+                    <nav>
+                        <div class="nav-wrapper">
+                            <form onSubmit="return false;">
+                                <div class="input-field">
+                                    <input id="input" type="search">
+                                    <label class="label-icon" for="search">
+                                    <i class="material-icons">search</i></label>
+                                    <i class="material-icons">close</i>
+                                </div>
+                            </form>
+                        </div>
+                    </nav>
+                    <div class="col s12">
+                        <div class="row">
+                            <div id="searchResults"></div>
+                        </div>
+                    </div>
+                </div>
+
+
+                <div class="col s8 offset-s1">
+                    <div class="row">
+                        <div id="albums"></div>
+                    </div>
+                </div>
+
+            </div>
+
+        </div>
+
+        <footer>
+            <span>Made with &hearts; by Monika Ronowska</span>
+        </footer>
+
+        <!--Compiled and minified JavaScript-->
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/js/materialize.min.js"></script>
+
+        <!--Custom script-->
+        <script src="js/script.js"></script>
+    </body>
 </html>
