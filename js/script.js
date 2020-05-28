@@ -2,12 +2,19 @@ let btnSearch = document.querySelector('#btnSearch')
 let output = document.querySelector('#albums')
 let searchResults = document.querySelector('#searchResults')
 let input = document.getElementById('input');
-const numberOfAlbums = 20;
+const numberOfAlbums = 90;
 
 document.addEventListener('DOMContentLoaded', function () {
     let elems = document.querySelectorAll('.parallax');
     M.Parallax.init(elems);
 });
+
+const initTooltips = () => {
+    let tolltips = document.querySelectorAll('.tooltipped')
+    for (let k = 0; k < tolltips.length; k++) {
+        M.Tooltip.init(tolltips[k]);
+    }
+}
 
 function getData() {
     let url = 'https://itunes.apple.com/us/rss/topalbums/limit=100/json'
@@ -19,7 +26,7 @@ function getData() {
     
             let transformHtml = ``
 
-            for (let i = 0; i <= (numberOfAlbums - 1); i++) {
+            for (let i = 0; i <= numberOfAlbums; i++) {
                 transformHtml +=
                     ` 
                     <ul class="collection">
@@ -35,10 +42,7 @@ function getData() {
 
             albums.innerHTML = transformHtml
           
-            let tolltips = document.querySelectorAll('.tooltipped')
-            for (let k = 0; k < tolltips.length; k++) {
-                M.Tooltip.init(tolltips[k]);
-            }
+            initTooltips();
 
             input.addEventListener('keypress', function (e) {
                 if (e.key === 'Enter') {  
@@ -71,7 +75,7 @@ const printMatches = matches => {
     if (matches.length > 0) {
     const searchResult = matches.map(match => `
         <div class="col s12 m12 l6 slideRight">
-            <div class="card tossing">
+            <div class="tooltipped card tossing" data-position="top" data-tooltip="${match.title.label}">
                 <div class="card-image waves-effect waves-block waves-light">
                     <img class="activator" src=${match["im:image"][2].label}>
                 </div>
@@ -85,7 +89,7 @@ const printMatches = matches => {
     ).join('');
 
         searchResults.innerHTML = searchResult;
-
+        initTooltips();
     }
 }
 
